@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow" data-podglad>
+<title>Stara Stajnia Hebdów - restauracja koło Nowego Brzeska: kuchnia, wino, jazz</title>
+<meta name="description" content="Restauracja Stara Stajnia w Hebdowie koło Nowego Brzeska: kuchnia sezonowa i pizza, wino, koncerty jazzowe, przyjęcia rodzinne. Hebdów 230, tel. 12 445 95 88.">
+<meta property="og:title" content="Stara Stajnia Hebdów - kuchnia, wino, jazz">
+<meta property="og:description" content="Restauracja w Hebdowie koło Nowego Brzeska. Dobre jedzenie, kieliszek wina, muzyka i miejsce, w którym po prostu dobrze posiedzieć.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:type" content="restaurant">
+<meta name="theme-color" content="#7A2230">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lora-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-720.webp" imagesrcset="img/hero-m-540.webp 540w, img/hero-m-720.webp 720w, img/hero-m-960.webp 960w, img/hero-m-1280.webp 1280w" imagesizes="100vw" media="(max-width:760px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1600.webp" imagesrcset="img/hero-1280.webp 1280w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w, img/hero-2560.webp 2560w" imagesizes="100vw" media="(min-width:761px)" fetchpriority="high">
+<style>
+@font-face{font-family:"Cormorant";font-weight:600;font-display:swap;src:url(fonts/cormorant-garamond-600.woff2) format("woff2")}
+@font-face{font-family:"Lora";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/lora-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013-2014,U+2018-2019,U+201C-201E,U+2022,U+2026}
+@font-face{font-family:"Lora";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/lora-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{
+  --wino:#7A2230;--wino-ciemne:#5E1824;--noc:#1A1416;--tekst:#1F1B1C;--szary:#5C5658;
+  --tlo:#FFFFFF;--tlo2:#F3F3F5;--linia:#E2E1E4;
+  --szeryf:"Cormorant",Georgia,"Times New Roman",serif;--tekstowa:"Lora",Georgia,serif;
+  --w:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--tlo);color:var(--tekst);font:17px/1.65 var(--tekstowa);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--szeryf);font-weight:600;line-height:1.08;margin:0;letter-spacing:-.005em}
+h2{font-size:clamp(34px,4.6vw,56px)}
+h3{font-size:clamp(25px,2.4vw,30px)}
+p{margin:0 0 1em}
+.w{max-width:var(--w);margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:0 24px;border-radius:3px;font:600 16px/1.2 var(--tekstowa);text-decoration:none;border:1.5px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.btn-wino{background:var(--wino);color:#fff}
+.btn-wino:hover{background:var(--wino-ciemne)}
+.btn-jasny{background:rgba(255,255,255,.94);color:var(--noc)}
+.btn-jasny:hover{background:#fff}
+.btn-ramka{border-color:var(--wino);color:var(--wino)}
+.btn-ramka:hover{background:var(--wino);color:#fff}
+
+/* znak: dwudzielne wrota stajni z zastrzałą */
+.znak{width:30px;height:38px;flex:none}
+
+/* nagłówek */
+.top{position:absolute;inset:0 0 auto 0;z-index:20;color:#fff}
+.top .w{display:flex;align-items:center;justify-content:space-between;height:78px;max-width:1400px}
+.marka{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marka b{display:block;font:600 27px/1 var(--szeryf)}
+.marka small{display:block;font-size:13px;opacity:.88;margin-top:3px}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{text-decoration:none;font-size:15.5px}
+.nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:5px}
+.nav .btn{min-height:42px;padding:0 18px;font-size:15px}
+.menu-btn{display:none;background:none;border:1.5px solid rgba(255,255,255,.7);color:#fff;border-radius:3px;height:42px;padding:0 14px;font:600 15px var(--tekstowa)}
+
+/* pierwszy ekran */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--noc)}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero picture img{object-position:50% 45%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,14,15,.78) 0%,rgba(20,14,15,.5) 42%,rgba(20,14,15,.08) 75%),linear-gradient(0deg,rgba(20,14,15,.55),transparent 45%)}
+.hero .w{position:relative;z-index:2;width:100%;max-width:1400px;padding-top:110px;padding-bottom:clamp(40px,8vh,96px)}
+.futryna{position:relative;max-width:640px;padding:34px 0 0 38px;border-left:1.5px solid rgba(255,255,255,.55);border-top:1.5px solid rgba(255,255,255,.55)}
+.futryna::before{content:"";position:absolute;left:12px;top:12px;width:60px;height:60px;border-left:1.5px solid rgba(255,255,255,.35);border-top:1.5px solid rgba(255,255,255,.35)}
+.hero h1{font-size:clamp(44px,6.4vw,86px);margin-bottom:18px}
+.hero h1 span{display:block;font-size:.52em;margin-top:10px;font-weight:600}
+.hero p{font-size:clamp(17px,1.4vw,19.5px);max-width:520px;margin-bottom:28px}
+.akcje{display:flex;flex-wrap:wrap;gap:12px}
+.adres{margin:22px 0 0;font-size:15px;opacity:.9}
+
+/* sekcje */
+section{padding:clamp(70px,9vw,120px) 0}
+.szare{background:var(--tlo2)}
+.glowa{max-width:720px;margin-bottom:44px}
+.glowa h2{margin-bottom:18px}
+.glowa p{color:var(--szary);font-size:18px}
+.przegroda{display:flex;align-items:center;gap:16px;color:var(--wino);margin-bottom:26px}
+.przegroda::after{content:"";height:1.5px;background:currentColor;opacity:.35;flex:1;max-width:120px}
+.przegroda .znak{width:22px;height:28px}
+
+/* kuchnia */
+.pas{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 max(20px,calc((100% - 1140px)/2)) 8px;scroll-padding-inline:max(20px,calc((100% - 1140px)/2));margin:0 0 56px;scrollbar-width:none;cursor:grab}
+.pas::-webkit-scrollbar{display:none}
+.pas figure{margin:0;flex:0 0 clamp(270px,31vw,440px);scroll-snap-align:start;position:relative}
+.pas img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:2px;user-select:none;-webkit-user-drag:none}
+.pas figcaption{font-size:15px;color:var(--szary);margin-top:10px}
+.strzalki{display:flex;gap:10px;justify-content:flex-end;max-width:var(--w);margin:-40px auto 22px;padding:0 20px}
+.strzalki button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--linia);background:#fff;color:var(--tekst);font-size:20px;cursor:pointer}
+.strzalki button:hover{border-color:var(--wino);color:var(--wino)}
+.karty-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--tekst)}
+.karta{padding:30px 30px 34px 0;border-right:1px solid var(--linia)}
+.karta+.karta{padding-left:30px}
+.karta:last-child{border-right:0}
+.karta h3{margin-bottom:6px}
+.karta .kiedy{font-size:15px;color:var(--wino);margin-bottom:18px}
+.karta ul{list-style:none;margin:0 0 24px;padding:0}
+.karta li{padding:9px 0;border-bottom:1px dotted #CFCBCD;font-size:16px}
+.karta .btn{min-height:44px;font-size:15px}
+.uwaga{font-size:14.5px;color:var(--szary);margin-top:26px}
+
+/* wnętrze */
+.wnetrze{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.rama{position:relative}
+.rama::after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.6);pointer-events:none}
+.rama img{width:100%;border-radius:2px}
+.wnetrze .male{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.wnetrze .male img{aspect-ratio:4/3;object-fit:cover}
+
+/* koncerty - jedyna ciemna sekcja */
+.koncerty{background:var(--noc);color:#F2EEEF}
+.koncerty .glowa p{color:#CFC6C8}
+.koncerty .przegroda{color:#E2A3AD}
+.koncerty .pas figure{flex-basis:clamp(240px,24vw,330px)}
+.koncerty .pas img{aspect-ratio:1/1;background:#000}
+.koncerty .pas figcaption{color:#F2EEEF;font:600 22px/1.2 var(--szeryf)}
+.koncerty .strzalki button{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.scena{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:56px}
+.scena img{aspect-ratio:3/2;object-fit:cover;width:100%}
+
+/* przyjęcia */
+.przyjecia{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.kolaz{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
+.kolaz img{width:100%;height:clamp(300px,34vw,460px);object-fit:cover;border-radius:2px}
+.przyjecia ul{margin:0 0 28px;padding:0;list-style:none}
+.przyjecia li{padding:10px 0;border-bottom:1px solid var(--linia)}
+
+/* kontakt */
+.kontakt{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(30px,5vw,70px);align-items:stretch}
+.dane dl{margin:0 0 28px;display:grid;grid-template-columns:auto 1fr;gap:12px 22px}
+.dane dt{color:var(--szary);font-size:15px;padding-top:2px}
+.dane dd{margin:0;font-size:18px}
+.dane dd a{text-decoration:none;border-bottom:1px solid var(--wino)}
+.mapa{min-height:380px;background:#E6E5E8;position:relative;border-radius:2px;overflow:hidden}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapa button{position:absolute;inset:0;width:100%;border:0;background:#E6E5E8;color:var(--tekst);font:600 17px var(--tekstowa);cursor:pointer}
+
+/* stopka */
+footer{background:var(--tlo2);border-top:1px solid var(--linia);padding:42px 0 30px;font-size:15px;color:var(--szary)}
+footer .w{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer b{color:var(--tekst)}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer p{margin:0 0 6px}
+.dol{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--linia);padding-top:20px;margin-top:6px}
+
+@media (max-width:980px){
+  .karty-menu{grid-template-columns:1fr}
+  .karta,.karta+.karta{padding:26px 0;border-right:0;border-bottom:1px solid var(--linia)}
+  .wnetrze,.przyjecia,.kontakt{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .nav{display:none}
+  .menu-btn{display:block}
+  .nav.otwarte{display:flex;position:fixed;inset:0;background:var(--noc);flex-direction:column;justify-content:center;gap:26px;font-size:22px;z-index:30}
+  .nav.otwarte a{font-size:24px}
+  .nav.otwarte .zamknij{position:absolute;top:18px;right:20px}
+}
+@media (max-width:760px){
+  body{font-size:16.5px}
+  .top .w{height:66px}
+  .marka b{font-size:24px}
+  .znak{width:26px;height:33px}
+  .hero .w{padding-top:84px;padding-bottom:26px}
+  .hero::after{background:linear-gradient(0deg,rgba(20,14,15,.86) 0%,rgba(20,14,15,.6) 48%,rgba(20,14,15,.15) 80%,rgba(20,14,15,.35) 100%)}
+  .futryna{padding:24px 0 0 22px}
+  .futryna::before{left:8px;top:8px;width:40px;height:40px}
+  .hero h1{font-size:clamp(40px,11.5vw,50px);margin-bottom:14px}
+  .hero p{font-size:16.5px;margin-bottom:26px}
+  .akcje{flex-direction:column}
+  .akcje .btn{width:100%}
+  .adres{margin-top:16px;font-size:14px}
+  .scena{grid-template-columns:1fr}
+  .scena img:nth-child(2){display:none}
+  .strzalki{display:none}
+  .kolaz img{height:260px}
+  footer .w{grid-template-columns:1fr 1fr}
+  footer .w>div:first-child{grid-column:1/-1}
+}
+@media (max-height:700px) and (max-width:760px){
+  .hero h1{font-size:38px;margin-bottom:10px}
+  .hero p{font-size:15.5px;line-height:1.5;margin-bottom:24px}
+  .futryna{padding-top:18px}
+  .btn{min-height:46px}
+  .adres{margin-top:12px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wrota" viewBox="0 0 30 38"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="26" height="34"/><path d="M2 19h26M5 16.5 25 4.5M5 33.5 25 21.5"/></g></symbol>
+</svg>
+
+<header class="top">
+  <div class="w">
+    <a class="marka" href="#start" aria-label="Stara Stajnia - strona główna">
+      <svg class="znak" aria-hidden="true"><use href="#wrota"/></svg>
+      <span><b>Stara Stajnia</b><small>kuchnia, wino, jazz</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu">
+      <button class="menu-btn zamknij" type="button" data-menu hidden>Zamknij</button>
+      <a href="#kuchnia">Kuchnia i menu</a>
+      <a href="#wnetrze">Wnętrze</a>
+      <a href="#koncerty">Koncerty</a>
+      <a href="#przyjecia">Przyjęcia</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn btn-jasny" href="tel:+48124459588">12 445 95 88</a>
+    </nav>
+    <button class="menu-btn" type="button" data-menu aria-controls="nav" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="start" style="padding:0">
+  <picture>
+    <source media="(max-width:760px)" srcset="img/hero-m-540.webp 540w, img/hero-m-720.webp 720w, img/hero-m-960.webp 960w, img/hero-m-1280.webp 1280w" sizes="100vw">
+    <img src="img/hero-1600.webp" srcset="img/hero-1280.webp 1280w, img/hero-1600.webp 1600w, img/hero-2000.webp 2000w, img/hero-2560.webp 2560w" sizes="100vw" width="2560" height="1920" fetchpriority="high" alt="Otwarte drzwi do sali restauracji Stara Stajnia w Hebdowie">
+  </picture>
+  <div class="w">
+    <div class="futryna">
+      <h1>Stara Stajnia w&nbsp;Hebdowie <span>restauracja koło Nowego Brzeska: kuchnia, wino i jazz</span></h1>
+      <p>Dobre jedzenie, kieliszek wina, muzyka i miejsce, w którym po prostu dobrze posiedzieć.</p>
+      <div class="akcje">
+        <a class="btn btn-wino" href="#kuchnia">Menu na ten tydzień</a>
+        <a class="btn btn-jasny" href="tel:+48124459588">Zadzwoń: 12 445 95 88</a>
+      </div>
+      <p class="adres">Hebdów 230, 32-120 Nowe Brzesko</p>
+    </div>
+  </div>
+</section>
+
+<section id="kuchnia">
+  <div class="w">
+    <div class="glowa">
+      <div class="przegroda"><svg class="znak" aria-hidden="true"><use href="#wrota"/></svg>Kuchnia</div>
+      <h2>Kuchnia, którą robi się uczciwie</h2>
+      <p>Gotujemy tak, żeby chciało się zjeść do końca, a nie tylko zrobić zdjęcie. Krótka karta, porządny produkt i dodatki, które nie udają niczego więcej.</p>
+    </div>
+  </div>
+  <div class="strzalki" aria-hidden="true"><button type="button" data-pas="potrawy" data-kier="-1">&#8592;</button><button type="button" data-pas="potrawy" data-kier="1">&#8594;</button></div>
+  <div class="pas" id="potrawy">
+    <figure><img src="img/okon-morski-640.webp" srcset="img/okon-morski-640.webp 640w, img/okon-morski-1000.webp 1000w" sizes="(max-width:760px) 280px, 440px" width="640" height="395" loading="lazy" alt="Okoń morski z warzywami"><figcaption>Ryba z patelni z warzywami</figcaption></figure>
+    <figure><img src="img/danie-sezonowe-640.webp" srcset="img/danie-sezonowe-640.webp 640w, img/danie-sezonowe-1000.webp 1000w" sizes="(max-width:760px) 280px, 440px" width="640" height="469" loading="lazy" alt="Kacza noga confit podana z winem"><figcaption>Danie sezonowe, do tego kieliszek wina</figcaption></figure>
+    <figure><img src="img/pasztet-640.webp" srcset="img/pasztet-640.webp 640w, img/pasztet-1000.webp 1000w" sizes="(max-width:760px) 280px, 440px" width="640" height="424" loading="lazy" alt="Pasztet z kaczej wątróbki z grzankami"><figcaption>Pasztet z kaczej wątróbki</figcaption></figure>
+    <figure><img src="img/gruszka-640.webp" srcset="img/gruszka-640.webp 640w, img/gruszka-1000.webp 1000w" sizes="(max-width:760px) 280px, 440px" width="640" height="460" loading="lazy" alt="Deser z gruszką w czerwonym winie"><figcaption>Gruszka w czerwonym sosie</figcaption></figure>
+    <figure><img src="img/sernik-640.webp" srcset="img/sernik-640.webp 640w, img/sernik-1000.webp 1000w" sizes="(max-width:760px) 280px, 440px" width="640" height="434" loading="lazy" alt="Sernik z truskawką i sosem karmelowym"><figcaption>Sernik</figcaption></figure>
+  </div>
+  <div class="w">
+    <div class="karty-menu">
+      <div class="karta">
+        <h3>Menu tygodniowe</h3>
+        <p class="kiedy">Zmienia się co tydzień</p>
+        <ul>
+          <li>Rosół z domowym makaronem i jarzynami</li>
+          <li>Barszcz czerwony z krokietem</li>
+          <li>Łosoś z patelni, szpinak i kremowe puree</li>
+          <li>Kacza noga confit, wędzona śliwka i morela</li>
+          <li>Udziec jagnięcy, mus z pietruszki i marchwi</li>
+        </ul>
+        <a class="btn btn-ramka" href="https://starastajniakuchnia.pl/menu/menu-tygodniowe.pdf" target="_blank" rel="noopener">Całe menu tygodniowe</a>
+      </div>
+      <div class="karta">
+        <h3>Obiady na wynos</h3>
+        <p class="kiedy">Od poniedziałku do piątku</p>
+        <ul>
+          <li>Kotlet schabowy, ziemniaki i kapusta zasmażana</li>
+          <li>Kotlet caprese z pomidorami i mozzarellą</li>
+          <li>Sznycel z sarny, sos pieprzowy</li>
+          <li>Schab sous vide, surówka z kiszonej kapusty</li>
+        </ul>
+        <a class="btn btn-ramka" href="https://starastajniakuchnia.pl/menu/menu-na-wynos.pdf" target="_blank" rel="noopener">Obiady w tym tygodniu</a>
+      </div>
+      <div class="karta">
+        <h3>Menu stałe</h3>
+        <p class="kiedy">Pizza, napoje i wina</p>
+        <ul>
+          <li>Pizza 32 cm na cienkim cieście, robionym na dwóch rodzajach mąki</li>
+          <li>Margherita, Pollo, Peperoni, Wiejska</li>
+          <li>Lemoniada domowa, kwas chlebowy</li>
+          <li>Wina na kieliszki i butelki</li>
+        </ul>
+        <a class="btn btn-ramka" href="https://starastajniakuchnia.pl/menu/menu-stale.pdf" target="_blank" rel="noopener">Pizza i napoje</a>
+      </div>
+    </div>
+    <p class="uwaga">W podglądzie pozycje z Państwa obecnych kart PDF. Na nowej stronie menu będzie zwykłym tekstem, który zmienią Państwo w panelu, bez wgrywania plików.</p>
+  </div>
+</section>
+
+<section class="szare" id="wnetrze">
+  <div class="w wnetrze">
+    <div class="rama"><img src="img/wnetrze-sala-800.webp" srcset="img/wnetrze-sala-800.webp 800w, img/wnetrze-sala-1400.webp 1400w" sizes="(max-width:980px) 100vw, 640px" width="1400" height="1050" loading="lazy" alt="Sala restauracji z drewnianymi stołami i lampami"></div>
+    <div>
+      <div class="przegroda"><svg class="znak" aria-hidden="true"><use href="#wrota"/></svg>Wnętrze</div>
+      <h2>Miejsce, do którego chce się wracać</h2>
+      <p style="margin-top:18px">Drewno, cegła, ogród i spokojna atmosfera robią swoje, ale najważniejsze jest to, że wszystko ma tu być po prostu dobre i prawdziwe. Jest miejsce na obiad, kolację i wieczór przy winie.</p>
+      <div class="male">
+        <img src="img/wnetrze-bar-800.webp" width="800" height="600" loading="lazy" alt="Bar z ceglaną ścianą">
+        <img src="img/przyjecie-klimat.webp" width="960" height="641" loading="lazy" alt="Sala nakryta na spotkanie">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="koncerty" id="koncerty">
+  <div class="w">
+    <div class="glowa">
+      <div class="przegroda"><svg class="znak" aria-hidden="true"><use href="#wrota"/></svg>Jazz i koncerty</div>
+      <h2>Muzyka blisko stołów</h2>
+      <p>Bez wielkiej sceny i bez dystansu. Bywają u nas koncerty jazzowe, bluesowe i folkowe, a muzyka gra kilka kroków od kieliszków i rozmów.</p>
+    </div>
+    <div class="scena">
+      <img src="img/workoholic.webp" width="960" height="637" loading="lazy" alt="Koncert zespołu Workoholic w Starej Stajni">
+      <img src="img/hard-times-trio.webp" width="960" height="638" loading="lazy" alt="Hard Times Trio na scenie">
+    </div>
+    <h3 style="margin-bottom:22px">To już się tu działo</h3>
+  </div>
+  <div class="strzalki" aria-hidden="true" style="margin-top:-60px"><button type="button" data-pas="archiwum" data-kier="-1">&#8592;</button><button type="button" data-pas="archiwum" data-kier="1">&#8594;</button></div>
+  <div class="pas" id="archiwum">
+    <figure><img src="img/grazyna-lobaszewska.webp" width="960" height="564" loading="lazy" alt="Grażyna Łobaszewska, plakat koncertu"><figcaption>Grażyna Łobaszewska</figcaption></figure>
+    <figure><img src="img/skolias.webp" width="933" height="1400" loading="lazy" alt="Skolias"><figcaption>Skolias</figcaption></figure>
+    <figure><img src="img/marek-batorski.webp" width="960" height="679" loading="lazy" alt="Marek Batorski i grupa jazzowa, plakat"><figcaption>Marek Batorski i M.G.&nbsp;Jazz Friends</figcaption></figure>
+    <figure><img src="img/maciej-kleczek.webp" width="960" height="638" loading="lazy" alt="Maciej Kleczek na koncercie"><figcaption>Maciej Kleczek</figcaption></figure>
+    <figure><img src="img/kapela-folkowa-inacy.webp" width="960" height="640" loading="lazy" alt="Kapela Folkowa Inacy"><figcaption>Kapela Folkowa Inacy</figcaption></figure>
+    <figure><img src="img/daryl-strodes.webp" width="512" height="480" loading="lazy" alt="Daryl Strodes na scenie"><figcaption>Daryl Strodes</figcaption></figure>
+    <figure><img src="img/broken-songs.webp" width="960" height="639" loading="lazy" alt="Broken Songs na koncercie"><figcaption>Broken Songs</figcaption></figure>
+    <figure><img src="img/spis.webp" width="675" height="960" loading="lazy" alt="Spis, plakat koncertu"><figcaption>Spis</figcaption></figure>
+    <figure><img src="img/cinemon.webp" width="960" height="960" loading="lazy" alt="Cinemon"><figcaption>Cinemon</figcaption></figure>
+  </div>
+  <div class="w" style="margin-top:34px">
+    <a class="btn btn-jasny" href="https://www.facebook.com/starastajniahebdow/" target="_blank" rel="noopener">Najbliższe koncerty na Facebooku</a>
+  </div>
+</section>
+
+<section id="przyjecia">
+  <div class="w przyjecia">
+    <div>
+      <div class="przegroda"><svg class="znak" aria-hidden="true"><use href="#wrota"/></svg>Przyjęcia</div>
+      <h2>Spotkania przy wspólnym stole</h2>
+      <p style="margin:18px 0 22px;color:var(--szary);font-size:18px">Rodzinne obiady, kolacje i świętowanie: spotkania, które mają swój ciężar i swój urok. Termin i menu najlepiej ustalić przez telefon albo mailem.</p>
+      <ul>
+        <li>Obiady rodzinne i uroczystości</li>
+        <li>Kolacje firmowe i spotkania w większym gronie</li>
+        <li>Menu ustalane z kuchnią</li>
+      </ul>
+      <div class="akcje">
+        <a class="btn btn-wino" href="tel:+48124459588">Zadzwoń: 12 445 95 88</a>
+        <a class="btn btn-ramka" href="#kontakt">Napisz do nas</a>
+      </div>
+    </div>
+    <div class="kolaz">
+      <img class="a" src="img/przyjecie-stol.webp" width="960" height="641" loading="lazy" alt="Długi stół nakryty na przyjęcie">
+      <img class="b" src="img/przyjecie-sala-2.webp" width="960" height="1280" loading="lazy" alt="Nakryty stół w sali z oknami">
+    </div>
+  </div>
+</section>
+
+<section class="szare" id="kontakt">
+  <div class="w kontakt">
+    <div class="dane">
+      <div class="przegroda"><svg class="znak" aria-hidden="true"><use href="#wrota"/></svg>Kontakt i dojazd</div>
+      <h2 style="margin-bottom:28px">Zadzwoń, napisz albo po prostu przyjedź</h2>
+      <dl>
+        <dt>Adres</dt><dd>Hebdów 230, 32-120 Nowe Brzesko</dd>
+        <dt>Restauracja</dt><dd><a href="tel:+48124459588">12 445 95 88</a></dd>
+        <dt>Kuchnia</dt><dd><a href="tel:+48728816708">728 816 708</a></dd>
+        <dt>E-mail</dt><dd><a href="mailto:info@starastajniakuchnia.pl">info@starastajniakuchnia.pl</a></dd>
+      </dl>
+      <a class="btn btn-wino" href="https://www.google.com/maps/search/?api=1&amp;query=Stara%20Stajnia%20Hebd%C3%B3w%20230" target="_blank" rel="noopener">Wyznacz trasę</a>
+    </div>
+    <div class="mapa" id="mapa"><iframe src="https://www.google.com/maps?q=Stara+Stajnia+Hebd%C3%B3w+230,+32-120+Nowe+Brzesko&amp;output=embed" title="Mapa dojazdu do Starej Stajni" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w">
+    <div>
+      <p><b>Stara Stajnia Hebdów - kuchnia, wino, jazz</b></p>
+      <p>Hebdów 230, 32-120 Nowe Brzesko</p>
+      <p><a href="tel:+48124459588">12 445 95 88</a> · <a href="mailto:info@starastajniakuchnia.pl">info@starastajniakuchnia.pl</a></p>
+    </div>
+    <div>
+      <p><b>Pora na Obiad</b></p>
+      <p>Codzienne posiłki z kuchni Starej Stajni: <a href="https://poranaobiad.pl" target="_blank" rel="noopener">poranaobiad.pl</a></p>
+    </div>
+    <div>
+      <p><b>Obserwuj</b></p>
+      <p><a href="https://www.facebook.com/starastajniahebdow/" target="_blank" rel="noopener">Facebook</a></p>
+      <p><a href="https://www.instagram.com/starastajnia_kuchnia_wino_jazz" target="_blank" rel="noopener">Instagram</a></p>
+      <p><a href="https://www.tiktok.com/@starastajnia" target="_blank" rel="noopener">TikTok</a></p>
+    </div>
+    <div class="dol">
+      <span>© 2026 Stara Stajnia Hebdów · Polityka prywatności</span>
+<style>
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+</style>
+<a class="wylinka-badge" href="https://wylinka.pl/?utm_source=starastajniakuchnia.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+    </div>
+  </div>
+</footer>
+
+<script defer src="app.js"></script>
+</body>
+</html>
